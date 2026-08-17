@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: solar-energy-portal
+    env: static
+    buildCommand: npm run build
+    staticPublishPath: ./out
