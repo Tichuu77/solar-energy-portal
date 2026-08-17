@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   title: { default: 'Richa Enterprises | Rooftop Solar in Nagpur & Maharashtra', template: '%s | Richa Enterprises' },
   description: 'A premium solar partner for homes, businesses and industries in Nagpur and across Maharashtra. Thoughtful design, precise installation, lasting performance.',
   keywords: ['premium solar company in Nagpur', 'rooftop solar Nagpur', 'commercial solar Maharashtra', 'industrial solar Nagpur', 'Richa Enterprises solar'],
+  icons: {
+    icon: '/logo.jpg',
+    shortcut: '/logo.jpg',
+    apple: '/logo.jpg',
+  },
   openGraph: { type: 'website', locale: 'en_IN', siteName: 'Richa Enterprises', title: 'Power your future with solar', description: 'Trusted solar design and installation in Nagpur and Maharashtra by Richa Enterprises.' },
   twitter: { card: 'summary_large_image', title: 'Richa Enterprises | Solar for Maharashtra', description: 'Clean energy, engineered for your roof.' },
   robots: { index: true, follow: true },
