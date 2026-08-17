@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { InternalPage } from '@/components/internal-page'
 
 export const metadata: Metadata = {
-  title: 'Commercial Solar Solutions | Surya Urja',
+  title: 'Commercial Solar Solutions | Richa Enterprises',
   description: 'Commercial rooftop solar systems that make energy costs more predictable for Maharashtra businesses.',
 }
 
