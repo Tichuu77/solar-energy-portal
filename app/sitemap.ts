@@ -1,0 +1,2 @@
+import type { MetadataRoute } from 'next'
+export default function sitemap(): MetadataRoute.Sitemap { const base = process.env.NEXT_PUBLIC_SITE_URL || 'https://surya-urja.example'; return ['', '/about','/residential-solar','/commercial-solar','/industrial-solar','/projects','/solar-calculator','/solar-subsidy','/contact','/blog'].map(path=>({ url: `${base}${path}`, lastModified: new Date(), changeFrequency: 'monthly', priority: path===''?1:.7 })) }

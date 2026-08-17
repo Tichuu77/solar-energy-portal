@@ -1,47 +1,8 @@
-export default function Page() {
-  return (
-    <main
-      style={{
-        colorScheme: 'light dark',
-        position: 'relative',
-        display: 'flex',
-        minHeight: '100vh',
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: 'light-dark(#fff, #000)',
-        color: 'light-dark(#000, #fff)',
-      }}
-    >
-      <svg
-        aria-hidden="true"
-        style={{ width: 80, height: 80 }}
-        width={80}
-        height={80}
-        fill="none"
-        viewBox="0 0 20 20"
-        xmlns="http://www.w3.org/2000/svg"
-        stroke="currentColor"
-        strokeWidth="0.5"
-      >
-        <path
-          d="M14.2 14.2H17V6.9375C17 4.76288 15.2371 3 13.0625 3H5.8V5.8M14.2 14.2V7.79063L7.79062 14.2H14.2ZM14.2 14.2V17H6.9375C4.76288 17 3 15.2371 3 13.0625V5.8H5.8M5.8 5.8V12.2313L12.2313 5.8H5.8Z"
-          strokeLinejoin="round"
-        />
-      </svg>
-      <p
-        style={{
-          position: 'absolute',
-          left: '50%',
-          top: 'calc(50% + 56px)',
-          transform: 'translateX(-50%)',
-          whiteSpace: 'nowrap',
-          fontSize: '14px',
-          fontWeight: 500,
-          color: 'light-dark(#71717a, #a1a1aa)',
-        }}
-      >
-        Your v0 generation will show here.
-      </p>
-    </main>
-  )
-}
+import Link from 'next/link'
+import Image from 'next/image'
+import { ArrowRight, Check, ChevronRight, Play, Sun, Zap } from 'lucide-react'
+import { benefits, steps, projects, solutions } from '@/lib/site-data'
+import { FAQ, Footer, Icon, Navbar, SectionLabel, WhatsAppButton } from '@/components/site-shell'
+import { SolarCalculator } from '@/components/solar-tools'
+
+export default function Page() { return <><main><section className="relative min-h-[720px] overflow-hidden bg-primary text-white"><div className="absolute inset-0 opacity-25"><Image src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=2200&q=85" alt="Solar panels on a roof at sunrise" fill priority className="object-cover"/></div><div className="absolute inset-0 bg-[linear-gradient(90deg,#0d2d21_12%,rgba(13,45,33,.8)_52%,rgba(13,45,33,.18))]"/><Navbar/><div className="container-site relative z-10 flex min-h-[720px] items-center pt-24"><div className="max-w-3xl"><p className="mb-6 flex items-center gap-2 text-sm font-semibold text-accent"><span className="h-px w-10 bg-accent"/> Solar, thoughtfully done in Maharashtra</p><h1 className="font-display text-5xl font-semibold leading-[1.05] tracking-[-.04em] text-balance sm:text-7xl">Your roof can do <span className="text-accent">more.</span></h1><p className="mt-7 max-w-xl text-lg leading-8 text-white/72">Switch to clean, reliable energy with solar designed for your home, business, and the way you live in Nagpur.</p><div className="mt-9 flex flex-wrap gap-3"><Link href="/solar-calculator" className="btn-primary">See your solar potential <ArrowRight size={17}/></Link><Link href="/projects" className="btn-outline"><Play size={16} fill="currentColor"/> Explore our work</Link></div><div className="mt-14 flex flex-wrap gap-x-8 gap-y-3 text-sm text-white/65"><span className="flex items-center gap-2"><Check className="text-accent" size={16}/> MSEDCL guidance</span><span className="flex items-center gap-2"><Check className="text-accent" size={16}/> 25-year performance</span><span className="flex items-center gap-2"><Check className="text-accent" size={16}/> Local experts</span></div></div></div><div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-background to-transparent"/></section><section className="border-b border-border bg-background py-9"><div className="container-site grid grid-cols-2 gap-6 sm:grid-cols-4"><div><p className="font-display text-2xl font-bold">1,200+</p><p className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">systems installed</p></div><div><p className="font-display text-2xl font-bold">12 MW+</p><p className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">clean capacity</p></div><div><p className="font-display text-2xl font-bold">25 yrs</p><p className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">panel warranty</p></div><div><p className="font-display text-2xl font-bold">4.9/5</p><p className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">customer love</p></div></div></section><section className="section-pad"><div className="container-site"><div className="grid gap-12 lg:grid-cols-[.8fr_1.2fr]"><div><SectionLabel>Why solar, why now</SectionLabel><h2 className="font-display text-4xl font-semibold leading-tight tracking-tight text-balance sm:text-5xl">The smartest energy decision is already above you.</h2><p className="mt-5 max-w-md leading-7 text-muted-foreground">Energy costs are rising. The sun isn&apos;t going anywhere. We make the switch feel simple, honest, and worth it.</p><Link href="/about" className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-primary">Why Surya Urja <ArrowRight size={16}/></Link></div><div className="grid gap-px overflow-hidden rounded-3xl border border-border bg-border sm:grid-cols-2">{benefits.map((benefit)=><div key={benefit.title} className="bg-background p-7"><div className="mb-5 grid size-11 place-items-center rounded-2xl bg-secondary text-primary"><Icon name={benefit.icon}/></div><h3 className="font-display font-semibold">{benefit.title}</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">{benefit.text}</p></div>)}</div></div></div></section><section id="solutions" className="bg-[#e7efe7] section-pad"><div className="container-site"><div className="mb-12 flex flex-col justify-between gap-5 md:flex-row md:items-end"><div><SectionLabel>Solutions for every roof</SectionLabel><h2 className="font-display text-4xl font-semibold tracking-tight sm:text-5xl">Solar that fits your world.</h2></div><p className="max-w-sm text-sm leading-6 text-muted-foreground">One team. Every scale. From your first question to your first lower bill.</p></div><div className="grid gap-4 md:grid-cols-3">{solutions.map((solution)=><Link href={solution.href} key={solution.title} className="group flex min-h-[270px] flex-col justify-between rounded-3xl bg-white p-7 transition hover:-translate-y-1 hover:shadow-xl"><div><div className="mb-8 flex size-12 items-center justify-center rounded-2xl bg-primary text-white"><Icon name={solution.icon}/></div><h3 className="font-display text-xl font-semibold">{solution.title}</h3><p className="mt-3 text-sm leading-6 text-muted-foreground">{solution.text}</p></div><span className="flex items-center gap-2 text-sm font-bold text-primary">Explore solution <ChevronRight size={16} className="transition group-hover:translate-x-1"/></span></Link>)}</div></div></section><section className="section-pad"><div className="container-site"><div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center"><div className="grid-paper relative min-h-[430px] overflow-hidden rounded-3xl p-6"><div className="absolute inset-8 overflow-hidden rounded-2xl"><Image src={projects[0].image} alt="Residential solar installation in Nagpur" fill className="object-cover"/></div><div className="absolute bottom-8 right-8 max-w-[220px] rounded-2xl bg-primary p-5 text-white shadow-xl"><p className="text-xs text-white/55">Green Heights, Nagpur</p><p className="mt-2 font-display text-2xl font-semibold">10 kW</p><p className="mt-1 text-xs text-white/65">saving 72% on annual energy</p></div></div><div><SectionLabel>Real roofs. Real results.</SectionLabel><h2 className="font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">Good solar is measured in more than kilowatts.</h2><p className="mt-5 leading-7 text-muted-foreground">It&apos;s quieter bills, energy confidence, and knowing you made a choice that lasts. See what we&apos;ve built for families and businesses across the region.</p><div className="mt-7 grid grid-cols-2 gap-4 border-y border-border py-6"><div><p className="font-display text-2xl font-bold">₹2.4 Cr+</p><p className="mt-1 text-xs text-muted-foreground">saved by customers</p></div><div><p className="font-display text-2xl font-bold">18,000 t</p><p className="mt-1 text-xs text-muted-foreground">CO₂ avoided</p></div></div><Link href="/projects" className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-primary">See project stories <ArrowRight size={16}/></Link></div></div></div></section><section id="process" className="bg-primary py-20 text-white"><div className="container-site"><div className="grid gap-12 lg:grid-cols-[.75fr_1.25fr]"><div><SectionLabel>From curious to confident</SectionLabel><h2 className="font-display text-4xl font-semibold leading-tight sm:text-5xl">A clear path to clean energy.</h2><p className="mt-5 max-w-sm text-sm leading-6 text-white/65">No jargon. No pressure. Just a thoughtful process led by people who know solar in Maharashtra.</p></div><div className="grid gap-7 sm:grid-cols-2">{steps.map((item)=><div key={item.number} className="border-t border-white/20 pt-5"><span className="font-mono text-xs text-accent">{item.number}</span><h3 className="mt-5 font-display text-xl font-semibold">{item.title}</h3><p className="mt-2 text-sm leading-6 text-white/60">{item.text}</p></div>)}</div></div></div></section><section className="section-pad"><div className="container-site"><div className="mb-10 flex items-end justify-between"><div><SectionLabel>Solar, without the guesswork</SectionLabel><h2 className="font-display text-4xl font-semibold tracking-tight sm:text-5xl">Start with your numbers.</h2></div><Link href="/solar-calculator" className="hidden items-center gap-2 text-sm font-bold text-primary sm:flex">Open full calculator <ArrowRight size={16}/></Link></div><SolarCalculator compact/></div></section><section className="bg-secondary section-pad"><div className="container-site grid gap-12 lg:grid-cols-[.8fr_1.2fr]"><div><SectionLabel>Questions, answered</SectionLabel><h2 className="font-display text-4xl font-semibold tracking-tight sm:text-5xl">Let&apos;s clear the air.</h2><p className="mt-5 text-sm leading-6 text-muted-foreground">Still curious? That&apos;s a good thing. Our team is happy to talk through your roof, your bill, or anything else.</p><Link href="/contact" className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-primary">Ask us anything <ArrowRight size={16}/></Link></div><FAQ/></div></section><section className="relative overflow-hidden bg-accent py-16"><div className="container-site relative z-10 flex flex-col items-start justify-between gap-7 md:flex-row md:items-center"><div><p className="text-xs font-bold uppercase tracking-[.2em] text-accent-foreground/65">Ready when you are</p><h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-accent-foreground sm:text-4xl">Your brighter roof is one conversation away.</h2></div><Link href="/contact" className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-bold text-white">Book a free consultation <ArrowRight size={17}/></Link></div></section></main><Footer/><WhatsAppButton/></> }
