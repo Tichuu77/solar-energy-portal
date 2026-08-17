@@ -9,8 +9,8 @@ const sora = Sora({ subsets: ['latin'], variable: '--font-sora' })
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://surya-urja.example'),
   title: { default: 'Surya Urja | Rooftop Solar in Nagpur & Maharashtra', template: '%s | Surya Urja' },
-  description: 'Premium rooftop solar installation for homes, businesses and industries in Nagpur and across Maharashtra. Save more with clean energy.',
-  keywords: ['solar company in Nagpur', 'rooftop solar Nagpur', 'solar subsidy Maharashtra', 'MSEDCL rooftop solar'],
+  description: 'A premium solar partner for homes, businesses and industries in Nagpur and across Maharashtra. Thoughtful design, precise installation, lasting performance.',
+  keywords: ['premium solar company in Nagpur', 'rooftop solar Nagpur', 'commercial solar Maharashtra', 'industrial solar Nagpur'],
   openGraph: { type: 'website', locale: 'en_IN', siteName: 'Surya Urja', title: 'Power your future with solar', description: 'Trusted solar design and installation in Nagpur and Maharashtra.' },
   twitter: { card: 'summary_large_image', title: 'Surya Urja | Solar for Maharashtra', description: 'Clean energy, engineered for your roof.' },
   robots: { index: true, follow: true },
